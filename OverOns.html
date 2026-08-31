@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PB Promotions | Over Ons</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="OverOns.css">
+  <script src="PBWEB.JS"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    html, body { background: #d1d5db; }
+    .page-shell {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+      background: #fff;
+      border-left: 1px solid #d1d5db;
+      border-right: 1px solid #d1d5db;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+    }
+    @media (min-width: 1600px) {
+      .page-shell { max-width: 1400px; }
+    }
+  </style>
+</head>
+<body class="bg-gray-300 font-sans">
+  <div class="page-shell">
+  
+  
+<!-- TOP BAR (roze balk) -->
+<div class="bg-pink-600 text-white py-1.5 text-sm">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+
+    <!-- Social Media -->
+    <div class="flex items-center gap-5">
+      <a href="https://www.facebook.com/PaulBartelinkGroep/" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-facebook-f text-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/pbpromotionsnederland/" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-instagram text-lg"></i>
+      </a>
+      <a href="https://www.tiktok.com/@pbpromotionsnederland" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-tiktok text-lg"></i>
+      </a>
+    </div>
+
+    <!-- Midden tekst: PB Promotions on desktop, page name on phone -->
+    <div class="hidden md:block text-center font-medium">PB Promotions</div>
+    <div class="block md:hidden text-center font-medium">Over Ons</div>
+      <!-- Telefoon -->
+      <a href="tel:+31642206374" class="flex items-center gap-2 hover:text-pink-100 transition">
+        <i class="fa-solid fa-phone"></i>
+        <span class="hidden sm:inline font-medium">06 - 42 20 63 74</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between">
+      <a href="PBWEB.html" class="logo-link flex items-center gap-3 hover:opacity-90 transition">
+        <img src="Photos/PBPromoLogo.png" alt="PB Promotions" class="h-12">
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+        <a href="PBWEB.html" class="hover:text-pink-600 transition">Home</a>
+        <a href="OnzeProducten.html" class="hover:text-pink-600 transition">Onze Producten</a>
+        <a href="OverOns.html" class="hover:text-pink-600 transition"><b>Over Ons</b></a>
+        <a href="Contact.html" class="hover:text-pink-600 transition">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="mobileMenuButton" type="button" class="md:hidden text-gray-700 p-2 rounded-md hover:bg-gray-100 transition" aria-expanded="false" aria-controls="mobileNav">
+          <span class="sr-only">Open menu</span>
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileNav" class="md:hidden border-t border-gray-200 bg-white mobile-nav" aria-hidden="true">
+      <div class="px-6 py-4 space-y-3">
+        <a href="PBWEB.html" class="block text-gray-700 hover:text-pink-600 transition">Home</a>
+        <a href="OnzeProducten.html" class="block text-gray-700 hover:text-pink-600 transition">Onze Producten</a>
+        <a href="OverOns.html" class="block text-gray-700 hover:text-pink-600 transition">Over Ons</a>
+        <a href="Contact.html" class="block text-gray-700 hover:text-pink-600 transition">Contact</a>
+        <!-- offerte knop verwijderd -->
+      </div>
+    </div>
+  </nav>
+
+  <main class="about-section bg-slate-50 py-16">
+    <div class="max-w-6xl mx-auto px-6 space-y-16">
+      <section class="part-one">
+        <div class="max-w-4xl mx-auto text-center mb-12">
+          <span class="inline-block text-pink-600 uppercase tracking-[0.35em] text-sm font-semibold">Over Ons</span>
+          <h1 class="mt-4 text-4xl md:text-5xl font-bold text-slate-900">De goedkoopste allround leverancier</h1>
+          <p class="mt-6 text-lg text-slate-600 leading-8">Al meer dan 10 jaar de goedkoopste allround leverancier voor al uw werkkleding, promotiemateriaal en bedrijfwagenbestickering. Grote en kleine hoeveelheden. Wij borduren of bedrukken eigenlijk ALLES waar uw naam of logo op moet. Samen brainstormen over iets passends voor uw bedrijf. En dat alles tegen belachelijk lage prijzen!</p>
+        </div>
+
+        <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] items-center">
+          <div class="rounded-[2rem] overflow-hidden shadow-2xl bg-white border border-slate-200">
+            <img src="Photos/AlgemeenPromote.jpeg" alt="Foto van mij of mijn werk" class="w-full h-[560px] object-cover">
+          </div>
+
+          <div class="space-y-6">
+            <div class="rounded-[2rem] bg-white p-8 shadow-2xl border border-slate-200">
+              <h2 class="text-3xl font-semibold text-slate-900">Wat we doen</h2>
+              <p class="mt-4 text-slate-600 leading-8">Wij leveren alles op het gebied van werkkleding, promotieartikelen en bestickering. Van kleine oplages tot grote orders: wij zorgen dat uw bedrijf zichtbaar en professioneel wordt gepresenteerd.</p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div class="rounded-[1.5rem] bg-white p-6 shadow-lg border border-slate-200">
+                <h3 class="text-xl font-semibold text-slate-900">Kleine en grote aantallen</h3>
+                <p class="mt-3 text-slate-600">Of u een beperkte batch wilt of een grote levering nodig heeft, wij verzorgen schaalbare productie tegen scherpe voorwaarden.</p>
+              </div>
+              <div class="rounded-[1.5rem] bg-white p-6 shadow-lg border border-slate-200">
+                <h3 class="text-xl font-semibold text-slate-900">Borduren & bedrukken</h3>
+                <p class="mt-3 text-slate-600">Wij bedrukken en borduren vrijwel elk materiaal en product, zodat uw logo of boodschap precies zo tot leven komt als u wenst.</p>
+              </div>
+            </div>
+
+            <div class="rounded-[1.5rem] bg-white p-8 shadow-2xl border border-slate-200">
+              <h3 class="text-2xl font-semibold text-slate-900">Samen brainstormen</h3>
+              <p class="mt-4 text-slate-600 leading-8">We denken graag met u mee over een passende oplossing voor uw bedrijf. Van ontwerp tot levering, wij zorgen voor een complete service tegen belachelijk lage prijzen.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-line"></div>
+
+      <section class="part-two space-y-8">
+        <div class="grid gap-8 lg:grid-cols-2">
+          <div class="rounded-[2rem] bg-white p-8 shadow-2xl border border-slate-200">
+            <h2 class="text-3xl font-semibold text-slate-900">Mijn aanpak</h2>
+            <p class="mt-4 text-slate-600 leading-8">Ik begin met luisteren naar jouw doelen. Daarna maak ik een website en marketing die jouw bedrijf echt sterker maakt. Dit is jouw plek om uit te leggen hoe je werkt.</p>
+          </div>
+          <div class="rounded-[2rem] bg-white p-8 shadow-2xl border border-slate-200">
+            <h2 class="text-3xl font-semibold text-slate-900">Wat je kunt verwachten</h2>
+            <p class="mt-4 text-slate-600 leading-8">Een heldere samenwerking, korte lijnen en een website die professioneel oogt. Vervang deze tekst met je eigen details en voordelen.</p>
+          </div>
+        </div>
+
+        <div class="rounded-[2rem] bg-white p-8 shadow-2xl border border-slate-200">
+          <h2 class="text-3xl font-semibold text-slate-900">Mijn missie</h2>
+          <p class="mt-4 text-slate-600 leading-8">Mijn missie is om ondernemers online zichtbaarder te maken met een sterke website en goede presentatie. Schrijf hier wat jouw missie of visie is.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  </div>
+</body>
+</html>

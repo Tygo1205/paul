@@ -1,0 +1,70 @@
+.hero-bg {
+  background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.75)), 
+              url('Photos/website\ tamplte.png') center/cover no-repeat;
+}
+
+nav a {
+  position: relative;
+}
+
+nav a:not(.logo-link):not(.nav-button):after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #db2777;
+  transition: all 0.3s ease;
+}
+
+nav a:not(.logo-link):not(.nav-button):hover:after {
+  width: 100%;
+}
+
+nav a.nav-button {
+  transition: background-color 0.2s ease;
+}
+
+nav a.nav-button:hover {
+  background-color: #be185d;
+}
+
+#mobileNav {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  border-top-width: 0;
+  transition: max-height 0.35s ease, opacity 0.35s ease, border-top-width 0.35s ease;
+}
+
+#mobileNav.open {
+  max-height: 600px;
+  opacity: 1;
+  border-top-width: 1px;
+}
+
+.about-section {
+  background: #f8fafc;
+}
+
+.about-section img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  min-height: 260px;
+}
+
+.divider-line {
+  height: 4px;
+  max-width: 560px;
+  margin: 0 auto;
+  background: linear-gradient(90deg, #f472b6, #ec4899, #db2777);
+  border-radius: 9999px;
+}
+
+.about-section h1,
+.about-section h2,
+.about-section h3 {
+  line-height: 1.1;
+}

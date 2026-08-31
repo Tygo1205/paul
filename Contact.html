@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PB Promotions | Contact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="Contact.css">
+  <script src="PBWEB.JS"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    html, body { background: #d1d5db; }
+    .page-shell {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+      background: #fff;
+      border-left: 1px solid #d1d5db;
+      border-right: 1px solid #d1d5db;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+    }
+    @media (min-width: 1600px) {
+      .page-shell { max-width: 1400px; }
+    }
+  </style>
+</head>
+<body class="bg-gray-300 font-sans">
+  <div class="page-shell">
+  
+  
+<!-- TOP BAR (roze balk) -->
+<div class="bg-pink-600 text-white py-1.5 text-sm">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+
+    <!-- Social Media -->
+    <div class="flex items-center gap-5">
+      <a href="https://www.facebook.com/PaulBartelinkGroep/" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-facebook-f text-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/pbpromotionsnederland/" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-instagram text-lg"></i>
+      </a>
+      <a href="https://www.tiktok.com/@pbpromotionsnederland" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-tiktok text-lg"></i>
+      </a>
+    </div>
+
+    <!-- Midden tekst: PB Promotions on desktop, page name on phone -->
+    <div class="hidden md:block text-center font-medium">PB Promotions</div>
+    <div class="block md:hidden text-center font-medium">Contact</div>
+      <!-- Telefoon -->
+      <a href="tel:+31642206374" class="flex items-center gap-2 hover:text-pink-100 transition">
+        <i class="fa-solid fa-phone"></i>
+        <span class="hidden sm:inline font-medium">06 - 42 20 63 74</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between">
+      <a href="PBWEB.html" class="logo-link flex items-center gap-3 hover:opacity-90 transition">
+        <img src="Photos/PBPromoLogo.png" alt="PB Promotions" class="h-12">
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+        <a href="PBWEB.html" class="hover:text-pink-600 transition">Home</a>
+        <a href="OnzeProducten.html" class="hover:text-pink-600 transition">Onze Producten</a>
+        <a href="OverOns.html" class="hover:text-pink-600 transition">Over Ons</a>
+        <a href="Contact.html" class="hover:text-pink-600 transition"><b>Contact</b></a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="mobileMenuButton" type="button" class="md:hidden text-gray-700 p-2 rounded-md hover:bg-gray-100 transition" aria-expanded="false" aria-controls="mobileNav">
+          <span class="sr-only">Open menu</span>
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileNav" class="md:hidden border-t border-gray-200 bg-white mobile-nav" aria-hidden="true">
+      <div class="px-6 py-4 space-y-3">
+        <a href="PBWEB.html" class="block text-gray-700 hover:text-pink-600 transition">Home</a>
+        <a href="OnzeProducten.html" class="block text-gray-700 hover:text-pink-600 transition">Onze Producten</a>
+        <a href="OverOns.html" class="block text-gray-700 hover:text-pink-600 transition">Over Ons</a>
+        <a href="Contact.html" class="block text-gray-700 hover:text-pink-600 transition">Contact</a>
+        <!-- offerte knop verwijderd -->
+      </div>
+      </div>
+    </nav>
+
+    <!-- CONTACT CONTENT -->
+    <section class="py-12 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-6 grid gap-10 md:grid-cols-2">
+
+        <!-- Left: contact info + map -->
+        <div>
+          <h2 class="text-3xl font-bold mb-4">Contact</h2>
+
+          <div class="space-y-4 text-gray-700">
+            <div>
+              <div class="font-semibold">Telefoon</div>
+              <div id="contact-phone"><a href="tel:+31642206374" class="text-pink-600 hover:underline">06 - 42 20 63 74</a></div>
+            </div>
+            <div>
+              <div class="font-semibold">E-mail</div>
+              <div id="contact-email"><a href="mailto:info@pbpromotions.nl" class="text-pink-600 hover:underline">info@pbpromotions.nl</a></div>
+            </div>
+            <div>
+              <div class="font-semibold">Openingstijden</div>
+              <div id="contact-hours">Dagelijks tot 22.00 uur</div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: contact form -->
+        <div class="contact-form">
+          <h3 class="text-2xl font-semibold mb-4">Stel een vraag</h3>
+          <form id="contactForm" action="contact.php" method="post" class="space-y-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Naam</label>
+              <input name="name" type="text" placeholder="Jouw naam" required class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">E-mail</label>
+              <input name="email" type="email" placeholder="naam@voorbeeld.nl" required class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Telefoon</label>
+              <input name="phone" type="tel" placeholder="06 - 12 34 56 78" required class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700">Bericht</label>
+              <textarea name="message" rows="6" placeholder="Schrijf je bericht hier..." required class="mt-1 block w-full border border-gray-300 rounded-md px-3 py-2"></textarea>
+            </div>
+            <div class="pt-2">
+              <button type="submit" class="bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold">Verstuur bericht</button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </section>
+
+    </div>
+
+  </body>
+  </html>

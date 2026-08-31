@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PB Promotions | Onze Producten</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="OnzeProducten.css">
+  <script src="PBWEB.JS"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    html, body { background: #d1d5db; }
+    .page-shell {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+      background: #fff;
+      border-left: 1px solid #d1d5db;
+      border-right: 1px solid #d1d5db;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+    }
+    @media (min-width: 1600px) {
+      .page-shell { max-width: 1400px; }
+    }
+
+    .lightbox-target {
+      cursor: zoom-in;
+      transition: transform 0.3s ease;
+    }
+    .lightbox-target:hover {
+      transform: scale(1.02);
+    }
+
+    #lightboxOverlay {
+      position: fixed;
+      inset: 0;
+      z-index: 60;
+      display: flex;
+      opacity: 0;
+      pointer-events: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(15, 23, 42, 0.75);
+      padding: 1.5rem;
+      transition: opacity 0.35s ease;
+    }
+
+    #lightboxOverlay.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #lightboxOverlay img {
+      max-width: 100%;
+      max-height: 90vh;
+      border-radius: 1.5rem;
+      box-shadow: 0 30px 100px rgba(0, 0, 0, 0.35);
+      opacity: 0;
+      transform: scale(0.96);
+      transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+
+    #lightboxOverlay.open img {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    #lightboxClose {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: #ffffff;
+      font-size: 2rem;
+      background: rgba(15, 23, 42, 0.6);
+      border: none;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body class="bg-gray-300 font-sans">
+  <div class="page-shell">
+  
+  
+<!-- TOP BAR (roze balk) -->
+<div class="bg-pink-600 text-white py-1.5 text-sm">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+
+    <!-- Social Media -->
+    <div class="flex items-center gap-5">
+      <a href="https://www.facebook.com/PaulBartelinkGroep/" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-facebook-f text-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/pbpromotionsnederland/" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-instagram text-lg"></i>
+      </a>
+      <a href="https://www.tiktok.com/@pbpromotionsnederland" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-tiktok text-lg"></i>
+      </a>
+    </div>
+
+    <!-- Midden tekst: PB Promotions on desktop, page name on phone -->
+    <div class="hidden md:block text-center font-medium">PB Promotions</div>
+    <div class="block md:hidden text-center font-medium">Onze Producten</div>
+      <!-- Telefoon -->
+      <a href="tel:+31642206374" class="flex items-center gap-2 hover:text-pink-100 transition">
+        <i class="fa-solid fa-phone"></i>
+        <span class="hidden sm:inline font-medium">06 - 42 20 63 74</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between">
+      <a href="PBWEB.html" class="logo-link flex items-center gap-3 hover:opacity-90 transition">
+        <img src="Photos/PBPromoLogo.png" alt="PB Promotions" class="h-12">
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+        <a href="PBWEB.html" class="hover:text-pink-600 transition">Home</a>
+        <a href="OnzeProducten.html" class="hover:text-pink-600 transition"><b>Onze Producten</b></a>
+        <a href="OverOns.html" class="hover:text-pink-600 transition">Over Ons</a>
+        <a href="Contact.html" class="hover:text-pink-600 transition">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="mobileMenuButton" type="button" class="md:hidden text-gray-700 p-2 rounded-md hover:bg-gray-100 transition" aria-expanded="false" aria-controls="mobileNav">
+          <span class="sr-only">Open menu</span>
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileNav" class="md:hidden border-t border-gray-200 bg-white mobile-nav" aria-hidden="true">
+      <div class="px-6 py-4 space-y-3">
+        <a href="PBWEB.html" class="block text-gray-700 hover:text-pink-600 transition">Home</a>
+        <a href="OnzeProducten.html" class="block text-gray-700 hover:text-pink-600 transition">Onze Producten</a>
+        <a href="OverOns.html" class="block text-gray-700 hover:text-pink-600 transition">Over Ons</a>
+        <a href="Contact.html" class="block text-gray-700 hover:text-pink-600 transition">Contact</a>
+        <!-- offerte knop verwijderd -->
+      </div>
+    </div>
+  </nav>
+
+  <main class="products-page bg-slate-50 py-16">
+    <div class="max-w-6xl mx-auto px-6 space-y-16">
+      <section class="hero grid gap-10 lg:grid-cols-[0.95fr_1.05fr] items-center">
+        <div class="space-y-6">
+          <span class="inline-block text-pink-600 uppercase tracking-[0.35em] text-sm font-semibold">Onze Producten</span>
+          <h1 class="text-4xl md:text-5xl font-bold text-slate-900">Alles mogelijk met jouw logo of naam</h1>
+          <p class="text-lg text-slate-600 leading-8">Omdat wij tussenpersoon zijn van heel veel verschillende leveranciers hebben wij helaas niet de mogelijkheid tot een eigen webshop. Of het nu om bedrijfskleding gaat of om een aansteker met je logo erop, wij gaan het tegen de scherpste prijzen voor je regelen.</p>
+          <p class="text-lg text-slate-600 leading-8">Onze specialiteit is het ontwerpen van professioneel promotiemateriaal dat opvalt en bij je merk past. Van kleine oplages tot grote orders, wij adviseren je over materiaal, afwerking en levertijd.</p>
+          <p class="text-lg text-slate-600 leading-8 font-semibold">Ons motto is een beetje... als er een mogelijkheid is om je naam of logo erop te zetten, dan verkopen wij het!</p>
+        </div>
+        <div class="rounded-[2rem] overflow-hidden shadow-2xl border border-slate-200">
+          <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.29%20(1).jpeg" alt="Sticker design collage" class="w-full h-[520px] object-cover">
+        </div>
+      </section>
+
+      <section class="sticker-gallery bg-white rounded-[2rem] border border-slate-200 shadow-lg p-8">
+        <div class="max-w-6xl mx-auto space-y-8">
+          <div class="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] items-center">
+            <div class="space-y-4">
+              <span class="inline-block text-pink-600 uppercase tracking-[0.35em] text-sm font-semibold">Sticker Collectie</span>
+              <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Stickers en Bestickering</h2>
+              <p class="text-lg text-slate-600 leading-8">Voor al uw stickers groot en klein moet u ook bij PB Promotions zijn! Of u de stickers op vel, rol of bedrijfswagen wilt, wij regelen het tegen de scherpste prijzen. Kleine en grote aantallen.</p>
+              <ul class="grid gap-3 sm:grid-cols-2">
+                <li class="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-700">Ronde, vierkante en contourgesneden stickers</li>
+                <li class="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-700">Weerbestendige materialen voor binnen en buiten</li>
+                <li class="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-700">Snelle proefdrukken en flexibele oplages</li>
+                <li class="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-700">Persoonlijke begeleiding bij ontwerp en afwerking</li>
+              </ul>
+            </div>
+            <div class="rounded-[2rem] overflow-hidden bg-slate-100 shadow-inner">
+              <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.28.jpeg" alt="Sticker voorbeeld" class="w-full h-full object-cover lightbox-target cursor-zoom-in">
+            </div>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.28%20(1).jpeg" alt="Sticker design 1" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Full-color stickers</h3>
+                <p class="mt-2 text-sm text-slate-600">Levendige druk voor logo's, tekst en illustraties.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.28%20(2).jpeg" alt="Sticker design 2" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Branding stickers</h3>
+                <p class="mt-2 text-sm text-slate-600">Perfect voor verpakkingen, relatiegeschenken en displays.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.29.jpeg" alt="Sticker design 3" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Luxe afwerking</h3>
+                <p class="mt-2 text-sm text-slate-600">Mat, glans of transparant voor een premium uitstraling.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.29%20(2).jpeg" alt="Sticker design 5" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Contourgemonteerd</h3>
+                <p class="mt-2 text-sm text-slate-600">Stickers die precies passen bij uw vormen.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.29%20(3).jpeg" alt="Sticker design 6" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Evenement stickers</h3>
+                <p class="mt-2 text-sm text-slate-600">Snel, zichtbaar en flexibel inzetbaar.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.29%20(4).jpeg" alt="Sticker design 7" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Promotie stickers</h3>
+                <p class="mt-2 text-sm text-slate-600">Scherpe prijzen voor acties, launches en giveaways.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.29%20(5).jpeg" alt="Sticker design 8" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Merkbeleving</h3>
+                <p class="mt-2 text-sm text-slate-600">Creëer herkenbaarheid met custom stickers.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Stickers/WhatsApp%20Image%202026-06-10%20at%2012.32.29%20(6).jpeg" alt="Sticker design 9" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Direct bedrukken</h3>
+                <p class="mt-2 text-sm text-slate-600">Kwaliteitsdruk met heldere kleuren en scherpe lijnen.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="company-clothing-gallery bg-white rounded-[2rem] border border-slate-200 shadow-lg p-8">
+        <div class="max-w-6xl mx-auto space-y-8">
+          <div class="space-y-4">
+            <span class="inline-block text-pink-600 uppercase tracking-[0.35em] text-sm font-semibold">Bedrijfskleding</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Bedrijfskleding</h2>
+            <p class="text-lg text-slate-600 leading-8">Een selectie van bedrijfskleding uit onze Producten-foto map, professioneel, herkenbaar en scherp geprijsd.</p>
+            <ul class="grid gap-3 sm:grid-cols-2">
+              <li class="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-700">Logo-bedrukking en borduring op kleding</li>
+              <li class="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-700">Kleding voor medewerkers, events en promotie</li>
+            </ul>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/Screenshot%202026-06-03%20105010.png" alt="Bedrijfskleding 1" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 1</h3>
+                <p class="mt-2 text-sm text-slate-600">Voorbeelden van hoogwaardige promotiekleding.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/Screenshot%202026-06-03%20105124.png" alt="Bedrijfskleding 2" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 2</h3>
+                <p class="mt-2 text-sm text-slate-600">Ideaal voor teams, werknemers en promotie-evenementen.</p>
+              </div>
+            </article>
+           <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/WhatsApp%20Image%202026-06-01%20at%2017.09.22%20(6).jpeg" alt="Bedrijfskleding 12" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 3</h3>
+                <p class="mt-2 text-sm text-slate-600">Afbeeldingen van kleding voor zowel binnen als buiten gebruik.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/Screenshot%202026-06-03%20105146.png" alt="Bedrijfskleding 4" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 4</h3>
+                <p class="mt-2 text-sm text-slate-600">Onze collectie blijft flexibel, passend bij uw branding.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/Screenshot%202026-06-03%20105157.png" alt="Bedrijfskleding 5" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 5</h3>
+                <p class="mt-2 text-sm text-slate-600">Detailfoto’s van kledingstukken en bedrukking.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/Screenshot%202026-06-03%20105219%20-%20Copy.png" alt="Bedrijfskleding 6" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 6</h3>
+                <p class="mt-2 text-sm text-slate-600">Verschillende productlooks in één overzicht.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/WhatsApp%20Image%202026-06-01%20at%2016.58.31%20(3).jpeg" alt="Bedrijfskleding 7" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 7</h3>
+                <p class="mt-2 text-sm text-slate-600">Geschikt voor personeel en promoties.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/WhatsApp%20Image%202026-06-01%20at%2017.03.35%20(1).jpeg" alt="Bedrijfskleding 8" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 8</h3>
+                <p class="mt-2 text-sm text-slate-600">Comfortabele kleding met duidelijke branding.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/WhatsApp%20Image%202026-06-01%20at%2017.03.35%20(4).jpeg" alt="Bedrijfskleding 9" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 9</h3>
+                <p class="mt-2 text-sm text-slate-600">Flexibel toepasbaar voor verschillende bedrijfssituaties.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/WhatsApp%20Image%202026-06-01%20at%2017.09.21%20(1).jpeg" alt="Bedrijfskleding 10" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 10</h3>
+                <p class="mt-2 text-sm text-slate-600">Alles mogelijk in kleur en stijl voor uw team.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Producten-foto/WhatsApp%20Image%202026-06-01%20at%2017.09.22%20(4).jpeg" alt="Bedrijfskleding 11" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Bedrijfskleding foto 11</h3>
+                <p class="mt-2 text-sm text-slate-600">Duidelijke fotografie van onze kledingcollectie.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="accessories-gallery bg-white rounded-[2rem] border border-slate-200 shadow-lg p-8">
+        <div class="max-w-6xl mx-auto space-y-8">
+          <div class="space-y-4">
+            <span class="inline-block text-pink-600 uppercase tracking-[0.35em] text-sm font-semibold">Accessoires</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Accessoires</h2>
+            <p class="text-lg text-slate-600 leading-8">Een selectie accessoires uit de Accessoires-map: praktisch, opvallend en geschikt voor promotie.</p>
+            <ul class="grid gap-3 sm:grid-cols-2">
+              <li class="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-700">Accessoires voor events, medewerkers en giveaways</li>
+              <li class="rounded-3xl border border-slate-200 bg-slate-50 px-5 py-4 text-slate-700">Scherpe prijzen en snelle levertijden</li>
+            </ul>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Accessoires/Screenshot%202026-06-03%20105038.png" alt="Accessoires 1" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Accessoires 1</h3>
+                <p class="mt-2 text-sm text-slate-600">Praktische accessoires voor uw bedrijfsbranding.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Accessoires/Screenshot%202026-06-03%20105115.png" alt="Accessoires 2" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Accessoires 2</h3>
+                <p class="mt-2 text-sm text-slate-600">Stijlvolle details die uw merk versterken.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Accessoires/Screenshot%202026-06-03%20105136.png" alt="Accessoires 3" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Accessoires 3</h3>
+                <p class="mt-2 text-sm text-slate-600">Kwaliteit en functionaliteit in één.</p>
+              </div>
+            </article>
+            <article class="gallery-card rounded-[1.75rem] overflow-hidden border border-slate-200 bg-slate-50 shadow-sm">
+              <img src="Photos/Accessoires/Screenshot%202026-06-03%20105207.png" alt="Accessoires 4" loading="lazy" class="w-full h-48 object-cover lightbox-target cursor-zoom-in">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold text-slate-900">Accessoires 4</h3>
+                <p class="mt-2 text-sm text-slate-600">Ideaal voor promotionele toepassingen.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="products-grid grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="product-card rounded-[1.75rem] bg-white p-6 shadow-lg border border-slate-200">
+          <h3 class="text-xl font-semibold text-slate-900">Bedrijfskleding</h3>
+          <p class="mt-3 text-sm text-slate-600">Comfortabele werkkleding in uw huisstijl, van polo tot jas.</p>
+        </article>
+        <article class="product-card rounded-[1.75rem] bg-white p-6 shadow-lg border border-slate-200">
+          <h3 class="text-xl font-semibold text-slate-900">Bidons</h3>
+          <p class="mt-3 text-sm text-slate-600">Duurzame bidons met scherpe bedrukking voor sportclubs en events.</p>
+        </article>
+        <article class="product-card rounded-[1.75rem] bg-white p-6 shadow-lg border border-slate-200">
+          <h3 class="text-xl font-semibold text-slate-900">Sportkleding</h3>
+          <p class="mt-3 text-sm text-slate-600">Sportieve bedrukkingen voor teams, toernooien en evenementen.</p>
+        </article>
+        <article class="product-card rounded-[1.75rem] bg-white p-6 shadow-lg border border-slate-200">
+          <h3 class="text-xl font-semibold text-slate-900">Mutsen</h3>
+          <p class="mt-3 text-sm text-slate-600">Warme mutsen met jouw logo voor outdoor evenementen en winterpromoties.</p>
+        </article>
+        <article class="product-card rounded-[1.75rem] bg-white p-6 shadow-lg border border-slate-200">
+          <h3 class="text-xl font-semibold text-slate-900">Invullen</h3>
+          <p class="mt-3 text-sm text-slate-600">Nog te bepalen productcategorie — neem contact op voor een maatwerkoplossing.</p>
+        </article>
+        <article class="product-card rounded-[1.75rem] bg-white p-6 shadow-lg border border-slate-200">
+          <h3 class="text-xl font-semibold text-slate-900">Invullen</h3>
+          <p class="mt-3 text-sm text-slate-600">Nog te bepalen productcategorie — neem contact op voor een maatwerkoplossing.</p>
+        </article>
+      </section>
+
+      <section class="final-section rounded-[2rem] bg-white p-8 shadow-2xl border border-slate-200">
+        <h2 class="text-3xl font-semibold text-slate-900">En ga zo maar door...</h2>
+        <p class="mt-4 text-slate-600 leading-8">ALLES IS MOGELIJK!!!</p>
+      </section>
+    </div>
+  </main>
+
+  </div>
+
+  <div id="lightboxOverlay" aria-hidden="true">
+    <button id="lightboxClose" aria-label="Sluiten">×</button>
+    <img id="lightboxImage" src="" alt="Grote weergave">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const lightboxOverlay = document.getElementById('lightboxOverlay');
+      const lightboxImage = document.getElementById('lightboxImage');
+      const lightboxClose = document.getElementById('lightboxClose');
+      const lightboxTargets = document.querySelectorAll('.lightbox-target');
+
+      function openLightbox(src, alt) {
+        lightboxImage.src = src;
+        lightboxImage.alt = alt || 'Grote weergave';
+        lightboxOverlay.classList.add('open');
+        lightboxOverlay.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeLightbox() {
+        lightboxOverlay.classList.remove('open');
+        lightboxOverlay.setAttribute('aria-hidden', 'true');
+        lightboxImage.src = '';
+      }
+
+      lightboxTargets.forEach(image => {
+        image.addEventListener('click', () => {
+          openLightbox(image.src, image.alt);
+        });
+      });
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightboxOverlay.addEventListener('click', (event) => {
+        if (event.target === lightboxOverlay) {
+          closeLightbox();
+        }
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && lightboxOverlay.classList.contains('open')) {
+          closeLightbox();
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

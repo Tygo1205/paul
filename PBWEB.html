@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PB Promotions | Bedrijfskleding & Promotiemateriaal</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="PBWEB.JS"></script>
+  <link rel="stylesheet" href="PBWEB.CSS">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    html, body { background: #d1d5db; }
+    .page-shell {
+      margin: 0 auto;
+      width: 100%;
+      max-width: 1200px;
+      padding: 0 20px;
+      background: #fff;
+      border-left: 1px solid #d1d5db;
+      border-right: 1px solid #d1d5db;
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+    }
+    @media (min-width: 1600px) {
+      .page-shell { max-width: 1400px; }
+    }
+  </style>
+</head>
+<body class="bg-gray-300 font-sans">
+  <div class="page-shell">
+
+    <!-- TOP BAR (roze balk) -->
+    <div class="bg-pink-600 text-white py-1.5 text-sm">
+  <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+
+    <!-- Social Media -->
+    <div class="flex items-center gap-5">
+      <a href="https://www.facebook.com/PaulBartelinkGroep/" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-facebook-f text-lg"></i>
+      </a>
+      <a href="https://www.instagram.com/pbpromotionsnederland/" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-instagram text-lg"></i>
+      </a>
+      <a href="https://www.tiktok.com/@pbpromotionsnederland" target="_blank" class="hover:text-pink-100 transition">
+        <i class="fa-brands fa-tiktok text-lg"></i>
+      </a>
+    </div>
+
+    <!-- Midden tekst -->
+    <div class="hidden md:block text-center font-medium">
+      PB Promotions
+    </div>
+      <!-- Telefoon -->
+      <a href="tel:+31642206374" class="flex items-center gap-2 hover:text-pink-100 transition">
+        <i class="fa-solid fa-phone"></i>
+        <span class="hidden sm:inline font-medium">06 - 42 20 63 74</span>
+      </a>
+    </div>
+
+  </div>
+</div>
+
+  <!-- NAV -->
+  <nav class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-1 flex items-center justify-between">
+      <a href="PBWEB.html" class="logo-link flex items-center gap-3 hover:opacity-90 transition">
+        <img src="Photos/PBPromoLogo.png" alt="PB Promotions" class="h-12">
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-gray-700 font-medium">
+        <a href="PBWEB.html" class="hover:text-pink-600 transition"><B>Home</B></a>
+        <a href="OnzeProducten.html" class="hover:text-pink-600 transition">Onze Producten</a>
+        <a href="OverOns.html" class="hover:text-pink-600 transition">Over Ons</a>
+        <a href="Contact.html" class="hover:text-pink-600 transition">Contact</a>
+      </div>
+      <div class="flex items-center gap-3">
+        <button id="mobileMenuButton" type="button" class="md:hidden text-gray-700 p-2 rounded-md hover:bg-gray-100 transition" aria-expanded="false" aria-controls="mobileNav">
+          <span class="sr-only">Open menu</span>
+          <i class="fa-solid fa-bars text-2xl"></i>
+        </button>
+      </div>
+    </div>
+    <div id="mobileNav" class="md:hidden border-t border-gray-200 bg-white mobile-nav" aria-hidden="true">
+      <div class="px-6 py-4 space-y-3">
+        <a href="PBWEB.html" class="block text-gray-700 hover:text-pink-600 transition">Home</a>
+        <a href="OnzeProducten.html" class="block text-gray-700 hover:text-pink-600 transition">Onze Producten</a>
+        <a href="OverOns.html" class="block text-gray-700 hover:text-pink-600 transition">Over Ons</a>
+        <a href="Contact.html" class="block text-gray-700 hover:text-pink-600 transition">Contact</a>
+        <!-- offerte knop verwijderd -->
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero-bg h-screen flex items-center text-white">
+    <div class="hero-inner max-w-7xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+        Jouw merk.<br>Perfect gepromoot.
+      </h1>
+      <p class="text-xl md:text-2xl mb-10 max-w-2xl mx-auto">
+        Bedrijfskleding, promotiemateriaal en teamwear van topkwaliteit.<br>
+        Snel, scherp geprijsd en volledig op maat.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="Contact.html" class="bg-pink-600 hover:bg-pink-700 text-white px-10 py-4 rounded-full text-lg font-semibold transition">
+          Neem Contact op
+        </a>
+        <a href="OnzeProducten.html" class="border-2 border-slate-300 bg-slate-100 text-slate-900 hover:bg-slate-200 px-10 py-4 rounded-full text-lg font-semibold transition">
+          Bekijk onze werk
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- USP -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-10">
+      <div class="text-center">
+        <div class="text-5xl mb-4">👕</div>
+        <h3 class="text-2xl font-semibold mb-2">Bedrijfskleding</h3>
+        <p class="text-gray-600">Van polo's tot werkkleding en hoodies — volledig bedrukt of geborduurd.</p>
+      </div>
+      <div class="text-center">
+        <div class="text-5xl mb-4">🎁</div>
+        <h3 class="text-2xl font-semibold mb-2">Promotiemateriaal</h3>
+        <p class="text-gray-600">Pennen, mokken, keycords, powerbanks, tasjes en nog veel meer.</p>
+      </div>
+      <div class="text-center">
+        <div class="text-5xl mb-4">⚡</div>
+        <h3 class="text-2xl font-semibold mb-2">Snelle service</h3>
+        <p class="text-gray-600">Persoonlijk advies, snelle levering en uitstekende prijs-kwaliteit.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT SHOWCASE -->
+  <section class="py-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-4xl font-bold text-center mb-4">Wat we recent gemaakt hebben</h2>
+      <p class="text-center text-gray-600 mb-12">Echte voorbeelden voor echte klanten</p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <a href="OnzeProducten.html" class="block hover:opacity-90 transition">
+          <img src="Photos/Tshirt Groen.jpeg" class="rounded-2xl shadow-md hover:scale-105 transition" alt="">
+        </a>
+        <a href="OnzeProducten.html" class="block hover:opacity-90 transition">
+          <img src="Photos/Bekers.jpeg" class="rounded-2xl shadow-md hover:scale-105 transition" alt="">
+        </a>
+        <a href="OnzeProducten.html" class="block hover:opacity-90 transition">
+          <img src="Photos/BlauwPetNamen.jpeg" class="rounded-2xl shadow-md hover:scale-105 transition" alt="">
+        </a>
+        <a href="OnzeProducten.html" class="block hover:opacity-90 transition">
+          <img src="Photos/PrisonIsland.jpeg" class="rounded-2xl shadow-md hover:scale-105 transition" alt="">
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-gradient-to-r from-pink-600 to-pink-700 py-20 text-white">
+    <div class="max-w-4xl mx-auto text-center px-6">
+      <h2 class="text-4xl font-bold mb-6">Klaar om jouw merk te laten stralen?</h2>
+      <p class="text-xl mb-10">Vraag vandaag nog een vrijblijvende offerte aan. We denken graag met je mee.</p>
+      <a href="Contact.html" class="bg-white text-pink-600 px-10 py-5 rounded-full text-xl font-semibold hover:bg-gray-100 transition inline-block">
+        Contact opnemen
+      </a>
+    </div>
+  </section>
+
+  <footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <img src="Photos/PBPromoLogo.png" alt="PB Promotions" class="h-10 mx-auto mb-6 opacity-75">
+      <p>© 2026 PB Promotions - Enschede</p>
+      <p class="mt-2">Bedrijfskleding • Promotiemateriaal • Volledige branding</p>
+    </div>
+  </footer>
+
+  </div>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
