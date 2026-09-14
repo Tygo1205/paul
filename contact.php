@@ -1,18 +1,21 @@
 <?php
-// Alleen POST-aanvragen toestaan
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     echo "Method Not Allowed";
     exit;
 }
 
-// Gegevens ophalen en opschonen
 $name    = htmlspecialchars(trim($_POST['name'] ?? ''));
 $email   = htmlspecialchars(trim($_POST['email'] ?? ''));
 $phone   = htmlspecialchars(trim($_POST['phone'] ?? ''));
 $message = htmlspecialchars(trim($_POST['message'] ?? ''));
 
-// Validatie
 if (empty($name) || empty($email) || empty($message)) {
     echo "Vul alle verplichte velden in.";
     exit;
@@ -23,26 +26,41 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit;
 }
 
-// E-mailadres van PB Promotions
-$to = "Tygostaalsmid@gmail.com";
+try {
+    $mail = new PHPMailer(true);
 
-$subject = "Nieuw bericht via de website van $name";
-$body = "Je hebt een nieuw bericht ontvangen via het contactformulier op de website:\n\n"
-      . "Naam: $name\n"
-      . "E-mail: $email\n"
-      . "Telefoon: $phone\n\n"
-      . "Bericht:\n$message\n";
+    // ========== SMTP-instellingen ==========
+    $mail->isSMTP();
+    $mail->Host       = 'smtp.gmail.com';
+    $mail->SMTPAuth   = true;
+    $mail->Username   = 'Tygostaalsmid@gmail.com';          // ← Vervang door jouw Gmail
+    $mail->Password   = 'quem qvbx kixs eyqa';           // ← Vervang door App-wachtwoord
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port       = 587;
 
-$headers = "From: $email\r\n"
-         . "Reply-To: $email\r\n"
-         . "Content-Type: text/plain; charset=UTF-8\r\n";
+    // Debug (tijdelijk aanzetten als het niet werkt)
+    // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
-// Verstuur de e-mail
-if (mail($to, $subject, $body, $headers)) {
-    // Succes – stuur door naar bedankpagina
+    $mail->setFrom('Tygostaalsmid@gmail.com', 'PB Promotions Website');
+    $mail->addAddress('Tygostaalsmid@gmail.com', 'PB Promotions');
+    $mail->addReplyTo($email, $name);
+
+    $mail->isHTML(false);
+    $mail->CharSet = 'UTF-8';
+    $mail->Subject = "Nieuw bericht van $name";
+    $mail->Body    = "Je hebt een nieuw bericht ontvangen via het contactformulier:\n\n"
+                   . "Naam: $name\n"
+                   . "E-mail: $email\n"
+                   . "Telefoon: $phone\n\n"
+                   . "Bericht:\n$message\n";
+
+    $mail->send();
+
     header("Location: bedankt.html");
     exit;
-} else {
-    echo "Er is iets misgegaan bij het versturen. Probeer het later opnieuw of bel ons.";
+
+} catch (Exception $e) {
+    echo "Er is iets misgegaan bij het versturen.<br>";
+    echo "Foutmelding: " . htmlspecialchars($mail->ErrorInfo);
 }
 ?>

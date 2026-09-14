@@ -1,0 +1,5 @@
+# Serve the static homepage when a directory is requested.
+DirectoryIndex pbpromo.html
+
+# Keep Apache from exposing directory contents.
+Options -Indexes
