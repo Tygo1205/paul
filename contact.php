@@ -3,7 +3,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';
+require_once 'vendor/autoload.php';
 
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
@@ -28,21 +28,23 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 try {
     $mail = new PHPMailer(true);
-
-    // ========== SMTP-instellingen ==========
+    // smtp instellingen
     $mail->isSMTP();
-    $mail->Host       = 'smtp.gmail.com';
+    $mail->Host       = 'smtp.strato.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'Tygostaalsmid@gmail.com';          // ← Vervang door jouw Gmail
-    $mail->Password   = 'quem qvbx kixs eyqa';           // ← Vervang door App-wachtwoord
+    $mail->Username   = 'webmaster@tygostaalsmid.nl';
+    $mail->Password   = 'P8EcGB!NpBB!8AS';  // ← Vervang door jouw wachtwoord
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
+    $mail->Charset = 'UTF-8';
 
     // Debug (tijdelijk aanzetten als het niet werkt)
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
-    $mail->setFrom('Tygostaalsmid@gmail.com', 'PB Promotions Website');
-    $mail->addAddress('Tygostaalsmid@gmail.com', 'PB Promotions');
+    $mail->setFrom('webmaster@tygostaalsmid.nl', 'Tygostaalsmid Website');
+    $mail->addAddress('webmaster@tygostaalsmid.nl', 'Tygostaalsmid');
+    $mail->addAddress('Tygostaalsmid@gmail.com', 'Tygostaalsmid');
+    $mail->addAddress('info@pbpromotions.nl', 'Paul');
     $mail->addReplyTo($email, $name);
 
     $mail->isHTML(false);
