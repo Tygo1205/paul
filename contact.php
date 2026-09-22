@@ -33,7 +33,7 @@ try {
     $mail->Host       = 'smtp.strato.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'webmaster@tygostaalsmid.nl';
-    $mail->Password   = 'P8EcGB!NpBB!8AS';  // ← Vervang door jouw wachtwoord
+    $mail->Password   = '-----------------';  // ← Vervang door jouw wachtwoord
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
     $mail->Charset = 'UTF-8';
@@ -43,8 +43,6 @@ try {
 
     $mail->setFrom('webmaster@tygostaalsmid.nl', 'Tygostaalsmid Website');
     $mail->addAddress('webmaster@tygostaalsmid.nl', 'Tygostaalsmid');
-    $mail->addAddress('Tygostaalsmid@gmail.com', 'Tygostaalsmid');
-    $mail->addAddress('info@pbpromotions.nl', 'Paul');
     $mail->addReplyTo($email, $name);
 
     $mail->isHTML(false);
