@@ -33,11 +33,7 @@ try {
     $mail->Host       = 'smtp.strato.com';
     $mail->SMTPAuth   = true;
     $mail->Username   = 'webmaster@tygostaalsmid.nl';
-<<<<<<< HEAD
-    $mail->Password   = '-----------------';  // ← Vervang door jouw wachtwoord
-=======
-    $mail->Password   = '-----------------';  // ← Vervang door jouw wachtwoord
->>>>>>> 6f5c4cfe75259c37dbd894f302b9b1554d7bfe9e
+    $mail->Password   = '';  // ← Vervang door jouw wachtwoord
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
     $mail->Charset = 'UTF-8';
