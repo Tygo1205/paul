@@ -32,8 +32,8 @@ try {
     $mail->isSMTP();
     $mail->Host       = 'smtp.strato.com';
     $mail->SMTPAuth   = true;
-    $mail->Username   = 'webmaster@tygostaalsmid.nl';
-    $mail->Password   = '';  // ← Vervang door jouw wachtwoord
+    $mail->Username   = 'webmaster@pbpromotions.nl';
+    $mail->Password   = '-';  // ← Vervang door jouw wachtwoord
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Port       = 587;
     $mail->Charset = 'UTF-8';
@@ -41,8 +41,8 @@ try {
     // Debug (tijdelijk aanzetten als het niet werkt)
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
 
-    $mail->setFrom('webmaster@tygostaalsmid.nl', 'Tygostaalsmid Website');
-    $mail->addAddress('webmaster@tygostaalsmid.nl', 'Tygostaalsmid');
+    $mail->setFrom('webmaster@pbpromotions.nl', 'PB Promotions Website');
+    $mail->addAddress('webmaster@pbpromotions.nl', 'PB Promotions');
     $mail->addReplyTo($email, $name);
 
     $mail->isHTML(false);
